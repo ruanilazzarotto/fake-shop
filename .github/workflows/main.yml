@@ -22,4 +22,4 @@ jobs:
       - name: Configurar o kubectl
         run: echo "Executando o comando aws eks update-kubeconfig"
       - name: Deploy dos manifests no kubernetes
-        run: "Executando o comando kubectl apply"
+        run: echo "Executando o comando kubectl apply"
