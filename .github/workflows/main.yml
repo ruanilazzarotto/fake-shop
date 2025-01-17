@@ -41,11 +41,8 @@ jobs:
         run: aws eks update-kubeconfig --name aula-eks
       
       - name: Deploy dos manifests no kubernetes
-        --name aula-eks
-
-       - name: Deploy dos manifests no kubernetes
-         uses: Azure/k8s-deploy@v5
-         with:
+        uses: Azure/k8s-deploy@v5
+        with:
           manifests: |
             ./k8s/deployment.yaml
           images: |
