@@ -41,4 +41,13 @@ jobs:
         run: aws eks update-kubeconfig --name aula-eks
       
       - name: Deploy dos manifests no kubernetes
-        run: echo "Executando o comando kubectl apply"
+        --name aula-eks
+
+       - name: Deploy dos manifests no kubernetes
+         uses: Azure/k8s-deploy@v5
+         with:
+          manifests: |
+            ./k8s/deployment.yaml
+          images: |
+            ruanilazzarotto/fake-shop:v${{ github.run_number }}
+
